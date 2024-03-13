@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
 
+const server_port = porcess.env.PORT || 4040
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
@@ -45,6 +46,6 @@ io.on('connection', (socket) => {
 });
 
 
-server.listen(4040, () => {
+server.listen(server_port, () => {
     console.log('server is running on http://localhost:4040')
 })
